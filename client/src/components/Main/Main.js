@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Grow, Grid } from '@material-ui/core';
+import { Container, Grow, Grid, Box } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 
 
@@ -22,7 +22,13 @@ const Home = () => {
 
   return (
     <Grow in>
-      <Container >
+    
+      <Container 
+                bgcolor="red"
+                marginTop="px"
+
+      
+      >
         <Grid container justify="space-between" alignItems="stretch" spacing={3} >
       <Grid item xs={12} sm={7} md={12}>
             <Top setCurrentId={setCurrentId} />
@@ -38,6 +44,7 @@ const Home = () => {
           </Grid>
         </Grid>
       </Container>
+     
     </Grow>
   );
 };

@@ -38,6 +38,7 @@ const Navbar = () => {
   }, [location]);
 
   return (
+    
     <AppBar className={classes.appBar} position="sticky" color="inherit">
       <div className={classes.brandContainer}>
         <img className={classes.image} src={memories} alt="icon" height="60" />

@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 import {Typography} from '@material-ui/core';
 
 //import react pro sidebar components
-import {
+  import {
   ProSidebar,
   Menu,
   MenuItem,
   SidebarHeader,
 
   SidebarContent,
-} from "react-pro-sidebar";
+  } from "react-pro-sidebar";
 
 //import icons from react icons
 import { FaList } from "react-icons/fa";

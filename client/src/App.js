@@ -12,7 +12,7 @@ import Auth from './components/Auth/Auth';
 
 const App = () => (
   <BrowserRouter>
-    <Container maxWidth="lg">
+    <Container maxWidth="lx">
       <Navbar />
        <Routes>
         <Route  path="/Main" exact element={<Main />}/>
@@ -21,7 +21,7 @@ const App = () => (
         <Route path="/auth" exact element={<Auth />} />
           
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </Container>
   </BrowserRouter>
 );

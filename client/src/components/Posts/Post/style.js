@@ -20,7 +20,10 @@ export default makeStyles({
     borderRadius: '15px',
     height: '100%',
     position: 'relative',
-    backgroundColor: 'rgba(255, 0, 0, 0.5)',
+    // backgroundColor: 'rgba(255, 0, 0, 0.5)',
+    zIndex:'6',
+    boxShadow: "0px 0px 5px "
+
 
 
   },
