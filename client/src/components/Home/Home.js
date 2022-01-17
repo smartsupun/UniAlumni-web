@@ -18,12 +18,16 @@ const Home = () => {
     <Grow in>
       <Container >
         <Grid container justify="space-between" alignItems="stretch" spacing={3} >
-          {/* <Grid item xs={12} sm={7}>
-            <Posts setCurrentId={setCurrentId} />
-          </Grid> */}
-          {/* <Grid item xs={12} sm={4}>
-            <Form currentId={currentId} setCurrentId={setCurrentId} />
-          </Grid> */}
+          <div>
+            <h1>Banner</h1>
+            <h1>Features</h1>
+            <h1>recognized alumni groups</h1>
+            <h1>upcomming events</h1>
+            <h1>posts</h1>
+            <h1>footer</h1>
+            
+          </div>
+          
         </Grid>
       </Container>
     </Grow>

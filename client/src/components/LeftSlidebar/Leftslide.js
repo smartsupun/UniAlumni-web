@@ -62,6 +62,12 @@ const Leftslide = () => {
               <Typography  component={Link} to="/Mainpost">
 
               <MenuItem icon={<FaList />}  >Create post</MenuItem>
+           
+              </Typography>
+
+              <Typography  component={Link} to="/groupauth">
+
+              <MenuItem icon={<FaList />}  >Create Group</MenuItem>
               </Typography>
            
             </Menu>
