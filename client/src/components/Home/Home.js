@@ -24,7 +24,7 @@ const Home = () => {
             <h1>recognized alumni groups</h1>
             <h1>upcomming events</h1>
             <h1>posts</h1>
-            <h1>footer</h1>
+   
             
           </div>
           

@@ -8,7 +8,7 @@ import Mainpost from './components/Main/Mainpost';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Auth from './components/Auth/Auth';
-import Groupauth from './components/Groupauth/Auth';
+import Groupauth from './components/Groupcreate/Auth';
 import Grouphome from './components/Grouphome/Grouphome';
 
 
