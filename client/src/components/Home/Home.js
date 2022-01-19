@@ -3,8 +3,7 @@ import { Container, Grow, Grid } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 
 import { getPosts } from '../../actions/Posts';
-// import Posts from '../Posts/posts';
-// import Form from '../Form/Form';
+
 
 const Home = () => {
   const [currentId, setCurrentId] = useState(0);
@@ -25,14 +24,6 @@ const Home = () => {
             <div> <h1>upcomming events</h1></div>
             <div><h1>posts</h1></div>
             
-            
-            
-           
-            
-   
-            
-         
-          
         </Grid>
       </Container>
     </Grow>

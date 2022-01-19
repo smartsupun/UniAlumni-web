@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 
 import { getPosts } from '../../actions/Posts';
 import Posts from '../Posts/posts';
-import Form from '../Form/Form';
+
 import Left from '../LeftSlidebar/Leftslide';
 import Right from '../Rightslidebar/Rightslide';
 import Top from '../Topbar/Topbar';

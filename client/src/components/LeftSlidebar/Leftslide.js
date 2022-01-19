@@ -56,9 +56,7 @@ const Leftslide = () => {
           </SidebarHeader>
           <SidebarContent>
             <Menu iconShape="square">
-              {/* <MenuItem active={true} icon={<FiHome />}>
-                Home
-              </MenuItem> */}
+             
               <Typography  component={Link} to="/Mainpost">
 
               <MenuItem icon={<FaList />}  >Create post</MenuItem>
