@@ -19,14 +19,19 @@ const Home = () => {
       <Container >
         <Grid container justify="space-between" alignItems="stretch" spacing={3} >
           <div>
-            <h1>Banner</h1>
-            <h1>Features</h1>
-            <h1>recognized alumni groups</h1>
-            <h1>upcomming events</h1>
-            <h1>posts</h1>
+            <h1>Banner</h1> </div>
+            <div><h1>Features</h1></div>
+            <div><h1>recognized alumni groups</h1></div>
+            <div> <h1>upcomming events</h1></div>
+            <div><h1>posts</h1></div>
+            
+            
+            
+           
+            
    
             
-          </div>
+         
           
         </Grid>
       </Container>
