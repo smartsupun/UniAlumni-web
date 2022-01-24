@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import Auth from './components/Auth/Auth';
 import Groupauth from './components/Groupcreate/Auth';
 import Grouphome from './components/Grouphome/Grouphome';
+import Joingroup from './components/Joingroup/Joingroup';
 
 
 const App = () => (
@@ -21,6 +22,7 @@ const App = () => (
         <Route  path="/Mainpost"  element={<Mainpost />}/>
         <Route  path="/Groupauth"  element={<Groupauth />}/>
         <Route  path="/Grouphome"  element={<Grouphome />}/>
+        <Route  path="/joingroup"  element={<Joingroup />}/>
         <Route  path="/" exact element={<Home />}/>
         <Route path="/auth" exact element={<Auth />} />
           

@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Container, Grow, Grid } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 
+
 import { getPosts } from '../../actions/Posts';
+import Banner from './Banner'
+import Features from './Features'
+import Alumnigroup from './Alumnigroup'
 
 
 const Home = () => {
@@ -18,12 +22,14 @@ const Home = () => {
       <Container >
         <Grid container justify="space-between" alignItems="stretch" spacing={3} >
           <div>
-            <h1>Banner</h1> </div>
-            <div><h1>Features</h1></div>
-            <div><h1>recognized alumni groups</h1></div>
+             <Banner />  
+             <h1 style={{textAlign:"center"}}>Features</h1>
+            <Features />
+             <h1 style={{textAlign:"center"}}>Alumni Groups</h1>
+            <Alumnigroup />
             <div> <h1>upcomming events</h1></div>
             <div><h1>posts</h1></div>
-            
+          </div>
         </Grid>
       </Container>
     </Grow>
