@@ -28,10 +28,10 @@ const Joingroup = () => {
                 <Grid item xs={8} sm={8} style={{backgroundImage:`url(${image})`,backgroundSize:"cover", backgroundPosition: "center",height:'100vh'}}>
                         <h1  style={{margin:'10px',color:"white"}}>Suggested Groups</h1>
                     <Grid container style={{margin:'10px'}}>
-                            <Grid item xs={3} sm={3} > <Slider /> </Grid>
-                            <Grid item xs={3} sm={3}> <Slider /> </Grid>
-                            <Grid item xs={3} sm={3}> <Slider /> </Grid>
-                            <Grid item xs={3} sm={3}> <Slider /> </Grid>
+                            <Grid item xs={4} sm={4} > <Slider /> </Grid>
+                            <Grid item xs={4} sm={4}> <Slider /> </Grid>
+                            <Grid item xs={4} sm={4}> <Slider /> </Grid>
+                            <Grid item xs={4} sm={4}> <Slider /> </Grid>
                     </Grid>
                 </Grid>
             </Grid>

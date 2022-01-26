@@ -29,21 +29,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function NativeSelects() {
     const classes = useStyles();
-    const [state, setState] = React.useState({
-        
-
-    });
-    const [state2, setState2] = React.useState({
-        
-
-    });
+    const [state, setState] = React.useState(null);
+    const [state2, setState2] = React.useState(null);
 
     const handleChange = (event) => {
         const name = event.target.name;
 
 
         setState({
-            ...state,...state2,
+            ...state, ...state2,
             [name]: event.target.value,
         });
     };
@@ -56,7 +50,7 @@ export default function NativeSelects() {
     return (
         <div>
 
-         
+
             <FormControl variant="outlined" className={classes.formControl}>
                 <Autocomplete
                     value={state}
@@ -92,7 +86,7 @@ export default function NativeSelects() {
                     handleHomeEndKeys
                     id="free-solo-with-text-demo"
                     options={Schooldata}
-                    
+
                     getOptionLabel={(option) => {
                         // Value selected with enter, right from the input
                         if (typeof option === 'string') {
@@ -123,7 +117,7 @@ export default function NativeSelects() {
                 <TextField
                     id="date"
                     onChange={handleChange}
-                    native
+                    
                     name="alyear"
                     label="O/L Year"
                     type="date"
@@ -138,7 +132,7 @@ export default function NativeSelects() {
                 <TextField
                     id="date"
                     onChange={handleChange}
-                    native
+                    
                     name="olyear"
                     label="A/L Year"
                     type="date"
@@ -182,7 +176,7 @@ export default function NativeSelects() {
                     handleHomeEndKeys
                     id="free-solo-with-text-demo"
                     options={Unidata}
-                    
+
                     getOptionLabel={(option) => {
                         // Value selected with enter, right from the input
                         if (typeof option === 'string') {
@@ -200,7 +194,7 @@ export default function NativeSelects() {
                     style={{ width: 300 }}
                     freeSolo
                     renderInput={(params) => (
-                        <TextField {...params} label="Select Your University"  variant="outlined" />
+                        <TextField {...params} label="Select Your University" variant="outlined" />
                     )
                     }
                 />
@@ -211,7 +205,7 @@ export default function NativeSelects() {
                 <TextField
                     id="date"
                     onChange={handleChange}
-                    native
+                    
                     name="graduateyear"
                     label="Graduated Year"
                     type="date"

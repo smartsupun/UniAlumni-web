@@ -16,7 +16,7 @@ import Joingroup from './components/Joingroup/Joingroup';
 const App = () => (
   <BrowserRouter>
        <Navbar />
-    <Container maxWidth="lx">
+    <Container >
        <Routes>
         <Route  path="/Main" exact element={<Main />}/>
         <Route  path="/Mainpost"  element={<Mainpost />}/>
