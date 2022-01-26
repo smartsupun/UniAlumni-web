@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Typography, Card, CardContent,CardActions,CardMedia ,Button   } from '@material-ui/core';
 import background from "../../images/21310_Alumni_F.jpg";
+import { Link} from 'react-router-dom';
+
 
 const GeoupSuggestCard = () => {
 
@@ -23,8 +25,7 @@ const GeoupSuggestCard = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+      <Button component={Link} to="/auth" variant="contained" color="primary">Join Group</Button>
       </CardActions>
     </Card>
         </div>
