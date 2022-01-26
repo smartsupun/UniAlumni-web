@@ -3,7 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Select, Button, FormControl, InputLabel, TextField } from '@material-ui/core';
 import Schooldata from './Schooldata.json'
 import Unidata from './Unidata.json'
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Autocomplete, { createFilterOptions } from '@material-ui/lab/Autocomplete';
+
+
+
+const filter = createFilterOptions();
 
 
 const useStyles = makeStyles((theme) => ({
@@ -25,11 +30,11 @@ const useStyles = makeStyles((theme) => ({
 export default function NativeSelects() {
     const classes = useStyles();
     const [state, setState] = React.useState({
-        school: '',
-        olyear: '',
-        alyear: '',
-        university: '',
-        graduateyear: ''
+        
+
+    });
+    const [state2, setState2] = React.useState({
+        
 
     });
 
@@ -38,35 +43,78 @@ export default function NativeSelects() {
 
 
         setState({
-            ...state,
+            ...state,...state2,
             [name]: event.target.value,
         });
     };
 
     const handleSubmit = (e) => {
         console.log(state);
-        // e.preventDefault() --temporary commented for testing
+        e.preventDefault() //--temporary commented for testing
         // ... submit to API or something
     };
     return (
         <div>
 
+         
             <FormControl variant="outlined" className={classes.formControl}>
-                <InputLabel htmlFor="outlined-age-native-simple">Enter School Name</InputLabel>
-                <Select
-                    native
-                    value={state.age}
-                    onChange={handleChange}
-                    label="Enter School Name"
-                    inputProps={{
-                        name: 'school',
-                        id: 'outlined-age-native-simple',
+                <Autocomplete
+                    value={state}
+                    onChange={(event, newValue) => {
+                        if (typeof newValue === 'string') {
+                            setState({
+                                school: newValue,
+                            });
+                        } else if (newValue && newValue.inputValue) {
+                            // Create a new value from the user input
+                            setState({
+                                school: newValue.inputValue,
+                            });
+                        } else {
+                            setState(newValue);
+                        }
                     }}
-                >
-                    <option aria-label="None" value="" />
-                    {Schooldata.map((result) => (<option name="university" text={result.id}>{result.title}</option>))}
+                    filterOptions={(options, params) => {
+                        const filtered = filter(options, params);
 
-                </Select>
+                        // Suggest the creation of a new value
+                        if (params.inputValue !== '') {
+                            filtered.push({
+                                inputValue: params.inputValue,
+                                school: `Add "${params.inputValue}"`,
+                            });
+                        }
+
+                        return filtered;
+                    }}
+                    selectOnFocus
+                    clearOnBlur
+                    handleHomeEndKeys
+                    id="free-solo-with-text-demo"
+                    options={Schooldata}
+                    
+                    getOptionLabel={(option) => {
+                        // Value selected with enter, right from the input
+                        if (typeof option === 'string') {
+                            return option;
+                        }
+                        // Add "xxx" option created dynamically
+                        if (option.inputValue) {
+                            return option.inputValue;
+                        }
+                        // Regular option
+                        return option.school;
+                    }}
+
+                    renderOption={(option) => option.school}
+                    style={{ width: 300 }}
+                    freeSolo
+                    renderInput={(params) => (
+                        <TextField {...params} label="Select Your School" variant="outlined" />
+                    )
+                    }
+                />
+
             </FormControl>
 
             <FormControl variant="outlined" className={classes.formControl}>
@@ -77,7 +125,7 @@ export default function NativeSelects() {
                     onChange={handleChange}
                     native
                     name="alyear"
-                    label="/L Year"
+                    label="O/L Year"
                     type="date"
                     defaultValue="2017-05-24"
                     variant="outlined"
@@ -92,7 +140,7 @@ export default function NativeSelects() {
                     onChange={handleChange}
                     native
                     name="olyear"
-                    label="O/L Year"
+                    label="A/L Year"
                     type="date"
                     defaultValue="2017-05-24"
                     variant="outlined"
@@ -100,21 +148,63 @@ export default function NativeSelects() {
             </FormControl>
 
             <FormControl variant="outlined" className={classes.formControl}>
-                <InputLabel htmlFor="outlined-age-native-simple">Enter University</InputLabel>
-                <Select
-                    native
-                    value={state.age}
-                    onChange={handleChange}
-                    label="Enter School Name"
-                    inputProps={{
-                        name: 'university',
-                        id: 'outlined-age-native-simple',
+                <Autocomplete
+                    value={state2}
+                    onChange={(event, newValue) => {
+                        if (typeof newValue === 'string') {
+                            setState2({
+                                university: newValue,
+                            });
+                        } else if (newValue && newValue.inputValue) {
+                            // Create a new value from the user input
+                            setState2({
+                                university: newValue.inputValue,
+                            });
+                        } else {
+                            setState2(newValue);
+                        }
                     }}
-                >
-                    <option aria-label="None" value="" />
-                    {Unidata.map((result) => (<option text={result.id}>{result.title}</option>))}
+                    filterOptions={(options, params) => {
+                        const filtered = filter(options, params);
 
-                </Select>
+                        // Suggest the creation of a new value
+                        if (params.inputValue !== '') {
+                            filtered.push({
+                                inputValue: params.inputValue,
+                                university: `Add "${params.inputValue}"`,
+                            });
+                        }
+
+                        return filtered;
+                    }}
+                    selectOnFocus
+                    clearOnBlur
+                    handleHomeEndKeys
+                    id="free-solo-with-text-demo"
+                    options={Unidata}
+                    
+                    getOptionLabel={(option) => {
+                        // Value selected with enter, right from the input
+                        if (typeof option === 'string') {
+                            return option;
+                        }
+                        // Add "xxx" option created dynamically
+                        if (option.inputValue) {
+                            return option.inputValue;
+                        }
+                        // Regular option
+                        return option.university;
+                    }}
+
+                    renderOption={(option) => option.university}
+                    style={{ width: 300 }}
+                    freeSolo
+                    renderInput={(params) => (
+                        <TextField {...params} label="Select Your University"  variant="outlined" />
+                    )
+                    }
+                />
+
             </FormControl>
 
             <FormControl variant="outlined" className={classes.formControl}>

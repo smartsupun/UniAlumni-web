@@ -20,9 +20,7 @@ const GeoupSuggestCard = () => {
         <Typography gutterBottom variant="h6" component="div">
         Royal College Mother OBA
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lorem ipsum dolor sitquis iste ullam, sapiente quos magnima at fugiat consectetur illum.
-        </Typography>
+       
       </CardContent>
       <CardActions>
       <Button component={Link} to="/auth" variant="contained" color="primary">Join Group</Button>
