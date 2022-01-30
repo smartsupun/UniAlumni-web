@@ -108,7 +108,7 @@ export default function NativeSelects() {
                     style={{ width: 300 }}
                     freeSolo
                     renderInput={(params) => (
-                        <TextField {...params} label="Select Your School" variant="outlined" />
+                        <TextField {...params} label="Select Your Institute" variant="outlined" />
                     )
                     }
                 />
