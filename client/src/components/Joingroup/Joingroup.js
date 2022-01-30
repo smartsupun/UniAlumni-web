@@ -6,6 +6,7 @@ import Slider from './GroupSuggestCard'
 
 
 
+
 import Form from './Form'
 
 
@@ -18,6 +19,7 @@ const Joingroup = () => {
                 <Grid item xs={4} sm={4} >
                         <h1>form</h1>
                         < Form />
+                       
                 
                       
                       
