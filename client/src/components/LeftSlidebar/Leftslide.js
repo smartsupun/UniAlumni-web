@@ -57,16 +57,16 @@ const Leftslide = () => {
           <SidebarContent>
             <Menu iconShape="square">
              
+              <Typography  component={Link} to="/Groupauth">
+
+              <MenuItem icon={<FaList />}  >Create Group</MenuItem>
+              </Typography>
               <Typography  component={Link} to="/Mainpost">
 
               <MenuItem icon={<FaList />}  >Create post</MenuItem>
            
               </Typography>
 
-              <Typography  component={Link} to="/groupauth">
-
-              <MenuItem icon={<FaList />}  >Create Group</MenuItem>
-              </Typography>
            
             </Menu>
           </SidebarContent>
