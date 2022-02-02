@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Select, Button, FormControl, InputLabel, TextField } from '@material-ui/core';
 import Schooldata from './Schooldata.json'
 import Unidata from './Unidata.json'
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import Autocomplete, { createFilterOptions } from '@material-ui/lab/Autocomplete';
 
 
@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function NativeSelects() {
     const classes = useStyles();
+    const navigate = useNavigate();
     const [state, setState] = React.useState(null);
     const [state2, setState2] = React.useState(null);
     
@@ -45,8 +46,10 @@ export default function NativeSelects() {
     };
 
     const handleSubmit = (e) => {
-        console.log(state);
-        // e.preventDefault() //--temporary commented for testing
+        // console.log(state);
+        // navigate('/joingroup',{state : ['lyear','olyear','graduateyear','school','university']});
+        navigate('/joingroup',{state :state});
+        e.preventDefault() //--temporary commented for testing
         // ... submit to API or something
     };
 
@@ -54,7 +57,7 @@ export default function NativeSelects() {
 
 
     return (
-        <div>
+        <form>
 
 
             <FormControl variant="outlined" className={classes.formControl}>
@@ -229,6 +232,6 @@ export default function NativeSelects() {
 
 
             <Button component={Link} to='/groupauth' variant="contained" color="primary" onClick={handleSubmit}>Submit</Button>
-        </div>
+        </form>
     );
 }

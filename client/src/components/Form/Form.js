@@ -46,6 +46,7 @@ const Form = ({ currentId, setCurrentId }) => {
   }
 
   return (
+    
     <Paper className={classes.paper}>
       <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
         <Typography variant="h6">{currentId ? `Editing "${post.title}"` : 'Create a post'}</Typography>
@@ -57,6 +58,7 @@ const Form = ({ currentId, setCurrentId }) => {
         <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
       </form>
     </Paper>
+    
   );
 };
 
