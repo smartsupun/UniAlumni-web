@@ -10,8 +10,10 @@ import { signin, signup } from '../../actions/auth';
 import { AUTH } from '../../constants/actionTypes';
 import useStyles from './styles';
 import Input from './Input';
+import {useLocation} from 'react-router-dom';
 
-const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
+
+const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '',school:'',alyear:'',olyear:'',university:'',graduatedyear:'' };
 
 const SignUp = () => {
   const [form, setForm] = useState(initialState);
@@ -56,8 +58,13 @@ const SignUp = () => {
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
+
+  const location = useLocation();
+  
+
   return (
     <Container component="main" maxWidth="xs">
+      
       <Paper className={classes.paper} elevation={3}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
@@ -69,6 +76,11 @@ const SignUp = () => {
             <>
               <Input name="firstName" label="First Name" handleChange={handleChange} autoFocus half />
               <Input name="lastName" label="Last Name" handleChange={handleChange} half />
+              <Input name="school" label="school" handleChange={handleChange}  defaultValue={location.state.school}></Input>
+              <Input name="olyear" label="O/L year" handleChange={handleChange} half defaultValue={location.state.olyear}></Input>
+              <Input name="alyear" label="A/L year" handleChange={handleChange}half  defaultValue={location.state.alyear}></Input>
+              <Input name="university" label="university" handleChange={handleChange}  defaultValue={location.state.university}></Input>
+              <Input name="graduatedyear" label="Graduated year" handleChange={handleChange} half defaultValue={location.state.graduatedyear}></Input>
             </>
             )}
             <Input name="email" label="Email Address" handleChange={handleChange} type="email" />

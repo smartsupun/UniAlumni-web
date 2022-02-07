@@ -48,7 +48,7 @@ export default function NativeSelects() {
     const handleSubmit = (e) => {
         // console.log(state);
         // navigate('/joingroup',{state : ['lyear','olyear','graduateyear','school','university']});
-        navigate('/joingroup',{state :state});
+        navigate('/auth',{state :state});
         e.preventDefault() //--temporary commented for testing
         // ... submit to API or something
     };
@@ -219,7 +219,7 @@ export default function NativeSelects() {
                     id="date"
                     onChange={handleChange}
                     
-                    name="graduateyear"
+                    name="graduatedyear"
                     label="Graduated Year"
                     // type="date"
                     // defaultValue="2017-05-24"
