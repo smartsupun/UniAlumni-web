@@ -55,7 +55,7 @@ export default function NativeSelects() {
 
     return (
         <div style={{ border: "1px", borderStyle: "solid", borderRadius: "5px", margin: "10px", borderColor: "gray" }}>
-             <FormControl variant="outlined" className={classes.formControl}>
+            <FormControl variant="outlined" className={classes.formControl}>
                 <Autocomplete
                     value={state}
                     onChange={(event, newValue) => {
@@ -122,53 +122,74 @@ export default function NativeSelects() {
                 <TextField
                     id="date"
                     onChange={handleChange}
-
                     name="olyear"
                     label="O/L,A/L,Intake Year"
-                    // type="date"
+                    // type="date" 
                     // defaultValue="2017-05-24"
                     variant="outlined"
                 />
             </FormControl>
+
             <br></br>
             <hr style={{ width: "80%" }}></hr>
+
             <FormControl variant="outlined" className={classes.formControl}>
-
-
-                <TextField id="outlined-basic" label="Group Name" variant="outlined" />
+                <TextField
+                    onChange={handleChange}
+                    name="groupname"
+                    id="outlined-basic" 
+                    label="Group Name" 
+                    variant="outlined" />
             </FormControl>
+
             <FormControl variant="outlined" className={classes.formControl}>
-
-
-                <TextField id="outlined-basic" label="Group Email" variant="outlined" />
+                <TextField
+                    onChange={handleChange}
+                    name="groupemail"
+                    id="outlined-basic" 
+                    label="Group Email" 
+                    variant="outlined" />
             </FormControl>
+
             <FormControl variant="outlined" className={classes.formControl}>
-
-
-                <TextField id="outlined-basic" label="Group Contact number" variant="outlined" />
+                <TextField
+                    onChange={handleChange}
+                    name="groupphone"
+                    id="outlined-basic" 
+                    label="Group Contact number" 
+                    variant="outlined" />
             </FormControl><br></br>
 
             <br></br>
             <hr style={{ width: "80%" }}></hr>
             <br></br>
+
             <FormControl variant="outlined" className={classes.formControl}>
-
-                <TextField id="outlined-basic" label="Contact person name" variant="outlined" />
-            </FormControl>
-            <FormControl variant="outlined" className={classes.formControl}>
-
-
-                <TextField id="outlined-basic" label="Contact person Phone" variant="outlined" />
-            </FormControl>
-            <FormControl variant="outlined" className={classes.formControl}>
-
-
-                <TextField id="outlined-basic" label="Contact person email" variant="outlined" />
+                <TextField
+                    onChange={handleChange}
+                    name="contactpersonname"
+                    id="outlined-basic" 
+                    label="Contact person name" 
+                    variant="outlined" />
             </FormControl>
 
+            <FormControl variant="outlined" className={classes.formControl}>
+                <TextField
+                    onChange={handleChange}
+                    name="contactpersonphone"
+                    id="outlined-basic" 
+                    label="Contact person Phone" 
+                    variant="outlined" />
+            </FormControl>
 
-
-
+            <FormControl variant="outlined" className={classes.formControl}>
+                <TextField
+                    onChange={handleChange}
+                    name="contactpersonemail"
+                    id="outlined-basic" 
+                    label="Contact person email" 
+                    variant="outlined" />
+            </FormControl>
 
             <br></br>
 
