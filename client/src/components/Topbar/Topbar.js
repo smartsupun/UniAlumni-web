@@ -9,7 +9,7 @@ const Topbar = () => {
     return (
         <Paper className={classes.top}>
         <Typography variant="h6" align="center">
-         Topbar
+         Group Name
         </Typography>
       </Paper>
     )

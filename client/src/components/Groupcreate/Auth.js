@@ -45,18 +45,18 @@ const Group = () => {
         <form className={classes.form} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
           
-              <Input name="name" label="First Name" handleChange={handleChange} autoFocus half />
-              <Input name="year" label="Last Name" handleChange={handleChange} half />
-              <Input name="groupname" label="Last Name" handleChange={handleChange} half />
-              <Input name="groupemail" label="Last Name" handleChange={handleChange} half />
-              <Input name="groupphone" label="Last Name" handleChange={handleChange} half />
-              <Input name="contactpersonname" label="Last Name" handleChange={handleChange} half />
-              <Input name="contactpersonphone" label="Last Name" handleChange={handleChange} half />
-              <Input name="contactpersonemail" label="Last Name" handleChange={handleChange} half />
+              <Input name="name" label="Institute Name" handleChange={handleChange} autoFocus  />
+              <Input name="year" label="O/L,A/L,Intake year" handleChange={handleChange}  half/>
+              <Input name="groupname" label="Group Name" handleChange={handleChange}  />
+              <Input name="groupemail" label="Group Email" handleChange={handleChange}  />
+              <Input name="groupphone" label="Group Phone" handleChange={handleChange} half />
+              <Input name="contactpersonname" label="contact Person Name" handleChange={handleChange}  />
+              <Input name="contactpersonphone" label="contact Person Phone" handleChange={handleChange} half />
+              <Input name="contactpersonemail" label="contact Person Email" handleChange={handleChange}  />
                         
           </Grid>
           <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
-            Sign In
+            Create Group
           </Button>
                  
         </form>

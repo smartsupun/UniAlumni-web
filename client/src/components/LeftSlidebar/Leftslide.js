@@ -1,7 +1,7 @@
 //import useState hook to create menu collapse state
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import {Typography} from '@material-ui/core';
+import {Button, Typography} from '@material-ui/core';
 
 //import react pro sidebar components
   import {
@@ -57,15 +57,15 @@ const Leftslide = () => {
           <SidebarContent>
             <Menu iconShape="square">
              
-              <Typography  component={Link} to="/Groupauth">
+              <Button  component={Link} to="/Groupauth">
 
               <MenuItem icon={<FaList />}  >Create Group</MenuItem>
-              </Typography>
-              <Typography  component={Link} to="/Mainpost">
+              </Button>
+              <Button  component={Link} to="/Mainpost">
 
               <MenuItem icon={<FaList />}  >Create post</MenuItem>
            
-              </Typography>
+              </Button>
 
            
             </Menu>
