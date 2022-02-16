@@ -20,8 +20,8 @@ const App = () => (
        <Routes>
         <Route  path="/Main" exact element={<Main />}/>
         <Route  path="/Mainpost"  element={<Mainpost />}/>
-        <Route  path="/Groupauth"  element={<Groupauth />}/>
-        <Route  path="/Grouphome"  element={<Grouphome />}/>
+        <Route  path="/groupauth"  element={<Groupauth />}/>
+        <Route  path="/grouphome"  element={<Grouphome />}/>
         <Route  path="/joingroup"  element={<Joingroup />}/>
         <Route  path="/" exact element={<Home />}/>
         <Route path="/auth" exact element={<Auth />} />

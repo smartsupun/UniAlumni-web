@@ -1,41 +1,68 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import { Typography, Grid } from '@material-ui/core';
-import image from '../../images/slide.jpg'
-import Slider from './GroupSuggestCard'
-import Form from './Form'
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import Input from './Input';
+import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
+import useStyles from './styles';
+import { useNavigate } from 'react-router-dom';
+import { group } from '../../actions/group';
 
 
-const Auth = () => {
+
+
+
+const initialState = { name: '', year: '', groupname: '', groupemail: '', groupphone: '',contactpersonname:'',contactpersonphone:'',contactpersonemail:'' };
+
+const Group = () => {
+  const [form2, setForm] = useState(initialState);
+    const dispatch = useDispatch();
+   const classes = useStyles();
+  const history = useNavigate();
+
+
+
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  
+    dispatch(group(form2, history));
+
+  
+  };
+  // console.log(form2)
+
+  
+
+  const handleChange = (e) => setForm({ ...form2, [e.target.name]: e.target.value });
+
+
+
   return (
-    <div>
-
-
-      <Grid container>
-        <Grid item xs={6} sm={6} >
-          <h1>Create Group</h1>
-          < Form />
-
-
-         
-
-
-
-
-
-        </Grid>
-
-        <Grid item xs={6} sm={6} style={{ backgroundImage: `url(${image})`, backgroundSize: "cover", backgroundPosition: "center", height: '100vh' }}>
-          <h1 style={{ margin: '10px', color: "white" }}>Suggested Groups</h1>
-          <Grid container style={{ margin: '10px' }}>
-            <Grid item xs={4} sm={4} > <Slider /> </Grid>
-            <Grid item xs={4} sm={4}> <Slider /> </Grid>
-            
+    <Container component="main" maxWidth="xs">
+      
+      <Paper className={classes.paper} elevation={3}>       
+  
+        <form className={classes.form} onSubmit={handleSubmit}>
+          <Grid container spacing={2}>
+          
+              <Input name="name" label="First Name" handleChange={handleChange} autoFocus half />
+              <Input name="year" label="Last Name" handleChange={handleChange} half />
+              <Input name="groupname" label="Last Name" handleChange={handleChange} half />
+              <Input name="groupemail" label="Last Name" handleChange={handleChange} half />
+              <Input name="groupphone" label="Last Name" handleChange={handleChange} half />
+              <Input name="contactpersonname" label="Last Name" handleChange={handleChange} half />
+              <Input name="contactpersonphone" label="Last Name" handleChange={handleChange} half />
+              <Input name="contactpersonemail" label="Last Name" handleChange={handleChange} half />
+                        
           </Grid>
-        </Grid>
-      </Grid>
-    </div>
-  )
-}
+          <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
+            Sign In
+          </Button>
+                 
+        </form>
+      </Paper>
+    </Container>
+  );
+};
 
-export default Auth
+export default Group;
