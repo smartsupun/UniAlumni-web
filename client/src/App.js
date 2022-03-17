@@ -18,13 +18,13 @@ const App = () => (
        <Navbar />
     <Container >
        <Routes>
-        <Route  path="/Main" exact element={<Main />}/>
+        <Route  path="/" exact element={<Home />}/>
+        <Route  path="/Main"  element={<Main />}/>
         <Route  path="/Mainpost"  element={<Mainpost />}/>
         <Route  path="/groupauth"  element={<Groupauth />}/>
         <Route  path="/grouphome"  element={<Grouphome />}/>
         <Route  path="/joingroup"  element={<Joingroup />}/>
-        <Route  path="/" exact element={<Home />}/>
-        <Route path="/auth" exact element={<Auth />} />
+        <Route path="/auth"  element={<Auth />} />
           
       </Routes>
     </Container>

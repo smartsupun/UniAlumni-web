@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Input from './Input';
-import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
+import { InputLabel , Button, Paper, Grid, MenuItem , Container,FormControl,Select   } from '@material-ui/core';
 import useStyles from './styles';
 import { useNavigate } from 'react-router-dom';
 import { group } from '../../actions/group';
@@ -17,6 +17,8 @@ const Group = () => {
     const dispatch = useDispatch();
    const classes = useStyles();
   const history = useNavigate();
+  
+
 
 
 
@@ -29,7 +31,7 @@ const Group = () => {
 
   
   };
-  // console.log(form2)
+  
 
   
 
@@ -40,10 +42,28 @@ const Group = () => {
   return (
     <Container component="main" maxWidth="xs">
       
+            <h1>Create Your Group</h1>
       <Paper className={classes.paper} elevation={3}>       
   
         <form className={classes.form} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
+
+
+                    <FormControl className={classes.formControl}>
+                        <InputLabel id="demo-simple-select-label">Institute</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          variant="outlined"                
+                          onChange={handleChange}
+                        >
+                            <MenuItem value={10}>O/L School</MenuItem>
+                            <MenuItem value={20}>A/L School</MenuItem>
+                            <MenuItem value={30}>University</MenuItem>
+                        </Select>
+                    </FormControl>
+
+
           
               <Input name="name" label="Institute Name" handleChange={handleChange} autoFocus  />
               <Input name="year" label="O/L,A/L,Intake year" handleChange={handleChange}  half/>

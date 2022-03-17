@@ -42,11 +42,11 @@ const Navbar = () => {
     <AppBar className={classes.appBar} position="sticky" color="inherit">
       <div className={classes.brandContainer}>
         <img className={classes.image} src={memories} alt="icon" height="60" />
-        <Typography component={Link} to="/Main" className={classes.heading} variant="h5" align="center">UniAlumni</Typography>
+        <Typography component={Link} to="/" className={classes.heading} variant="h5" align="center">UniAlumni</Typography>
       <div className={classes.tabContainer} >
-        <Typography component={Link} to="/Main" className={classes.tabs} variant="h6" align="center">Home</Typography>
-        <Typography component={Link} to="/" className={classes.tabs} variant="h6" align="center">About Us</Typography>
-        <Typography component={Link} to="/" className={classes.tabs} variant="h6" align="center">Contact Us</Typography>
+        <Typography component={Link} to="/" className={classes.tabs} variant="h6" align="center">Home</Typography>
+        <Typography component={Link} to="/" className={classes.tabs} variant="h6" align="center">Features</Typography>
+        <Typography component={Link} to="/" className={classes.tabs} variant="h6" align="center">Top Alumnies</Typography>
 
       </div>
       </div>

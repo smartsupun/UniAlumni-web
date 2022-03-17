@@ -66,6 +66,11 @@ const Leftslide = () => {
               <MenuItem icon={<FaList />}  >Create post</MenuItem>
            
               </Button>
+              <Button  component={Link} to="/Main">
+
+              <MenuItem icon={<FaList />}  >Create Event</MenuItem>
+           
+              </Button>
 
            
             </Menu>

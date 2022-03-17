@@ -22,10 +22,7 @@ const Featurecards = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem delectus veniam aspernatur assumenda ducimus velit enim quis iste ullam, sapiente quos magni exercitationem obcaecati est, minima at fugiat consectetur illum.
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
+     
     </Card>
         </div>
 

@@ -8,7 +8,7 @@ export const group = (formData2,router) => async (dispatch) => {
     const { data } = await api.Group(formData2);
 
     dispatch({ type: CREATE, payload: data });
-    router('/Main');
+    router('/grouphome');
 
   } catch (error) {
     console.log(error.message);
