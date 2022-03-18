@@ -18,26 +18,14 @@ const Group = () => {
    const classes = useStyles();
   const history = useNavigate();
   
-
-
-
-
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
   
     dispatch(group(form2, history));
-
   
-  };
-  
-
-  
+  };  
 
   const handleChange = (e) => setForm({ ...form2, [e.target.name]: e.target.value });
-
-
 
   return (
     <Container component="main" maxWidth="xs">

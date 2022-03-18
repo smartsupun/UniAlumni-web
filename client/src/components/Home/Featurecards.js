@@ -5,23 +5,20 @@ import GroupOutlinedIcon from '@material-ui/icons/GroupOutlined';
 
 
 
-const Featurecards = () => {
+const Featurecards = (props) => {
 
     return (
 
         <div style={{ width: "200px",marginLeft:"50px" }}>
             <Card sx={{ minWidth: 275 }}>
-                <div style={{ textAlign: "center", color: "red" }}><GroupOutlinedIcon /></div>
+                <div style={{ textAlign: "center", color:props.color }}><GroupOutlinedIcon /></div>
                 <CardContent>
                     <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                        <h4 style={{ textAlign: "center" }} >hang out with class mates</h4>
-
+                        <h4 style={{ textAlign: "center" }} >{props.topic}</h4>
                     </Typography>
-
                     <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                        strengthen bond with the classmates again, share ur thoughts with friends
-        </Typography>
-
+                       {props.text}
+                     </Typography>
                 </CardContent>
 
             </Card>
