@@ -10,6 +10,7 @@ const userSchema = mongoose.Schema({
   contactpersonname:{type: String, required:  true},
   contactpersonphone:{type: String, required:  true},
   contactpersonemail:{type: String, required:  true},
+  admin:{type: String, required:  true}
 });
 
 export default mongoose.model("Groups", userSchema);

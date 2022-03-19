@@ -5,27 +5,38 @@ import { InputLabel , Button, Paper, Grid, MenuItem , Container,FormControl,Sele
 import useStyles from './styles';
 import { useNavigate } from 'react-router-dom';
 import { group } from '../../actions/group';
-
-
-
+import  Axios  from 'axios';
 
 
 const initialState = { name: '', year: '', groupname: '', groupemail: '', groupphone: '',contactpersonname:'',contactpersonphone:'',contactpersonemail:'' };
 
 const Group = () => {
   const [form2, setForm] = useState(initialState);
-    const dispatch = useDispatch();
-   const classes = useStyles();
+  const dispatch = useDispatch();
+  const classes = useStyles();
   const history = useNavigate();
+
   
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  
-    dispatch(group(form2, history));
-  
+  const  handleSubmit = async (e) => {
+    e.preventDefault();  
+    // dispatch(group(form2, history));
+    
+    let id = JSON.parse(localStorage.getItem('profile')).result._id;
+    
+   let {data} = await Axios.post("http://localhost:5000/groupauth",{...form2,admin:id});
+   console.log(data.result);
+   if (data.result._id){
+     history(`/grouphome/${data.result._id}`)
+   }
   };  
 
   const handleChange = (e) => setForm({ ...form2, [e.target.name]: e.target.value });
+
+  // const test = ()=>{
+  //   console.log(JSON.parse(localStorage.getItem('profile')));
+  // }
+    
+  
 
   return (
     <Container component="main" maxWidth="xs">
@@ -61,11 +72,15 @@ const Group = () => {
               <Input name="contactpersonname" label="contact Person Name" handleChange={handleChange}  />
               <Input name="contactpersonphone" label="contact Person Phone" handleChange={handleChange} half />
               <Input name="contactpersonemail" label="contact Person Email" handleChange={handleChange}  />
+              {/* <input type="hidden" name="admin" value={id} /> */}
                         
           </Grid>
           <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
             Create Group
           </Button>
+          {/* <Button onClick={test} fullWidth variant="contained" color="primary" >
+            Create Group
+          </Button> */}
                  
         </form>
       </Paper>

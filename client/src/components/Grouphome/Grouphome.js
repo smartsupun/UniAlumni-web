@@ -1,8 +1,11 @@
 import React from 'react'
 import { Container, Grow, Grid, Box } from '@material-ui/core';
-
+import {useParams} from 'react-router-dom';
 
 const Grouphome = () => {
+
+    let param = useParams();
+    console.log(param.id);
     return (
         <Grow in>      
 

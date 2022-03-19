@@ -10,6 +10,7 @@ const userSchema = mongoose.Schema({
   alyear:{type: String, required:  true},
   university:{type: String, required:  true},
   graduatedyear:{type: String, required:  true},
+  groups:{type:Array,default: []}
 });
 
 export default mongoose.model("User", userSchema);

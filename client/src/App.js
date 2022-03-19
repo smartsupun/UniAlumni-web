@@ -10,6 +10,7 @@ import Auth from './components/Auth/Auth';
 import Groupauth from './components/Groupcreate/Auth';
 import Grouphome from './components/Grouphome/Grouphome';
 import Joingroup from './components/Joingroup/Joingroup';
+import Profile from './components/Profile/Profile';
 
 
 const App = () => (
@@ -25,6 +26,7 @@ const App = () => (
         <Route  path="/grouphome/:id"  element={<Grouphome />}/>
         <Route  path="/joingroup"  element={<Joingroup />}/>
         <Route path="/auth"  element={<Auth />} />
+        <Route path="/Profile"  element={<Profile />} />
           
       </Routes>
     </Container>
