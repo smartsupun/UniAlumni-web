@@ -7,6 +7,7 @@ import cors from 'cors';
 import postRoutes from './routes/posts.js';
 import userRouter from "./routes/users.js";
 import GroupRouter from "./routes/groupCreate.js";
+import Group from "./routes/group.js";
 
 const app = express();
 dotenv.config();
@@ -19,6 +20,7 @@ app.use(cors());
 app.use('/posts', postRoutes);
 app.use("/user", userRouter);
 app.use("/groupauth", GroupRouter);
+app.use("/group", Group);
 
 
 // database connection

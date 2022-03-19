@@ -1,11 +1,21 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import { Container, Grow, Grid, Box } from '@material-ui/core';
 import {useParams} from 'react-router-dom';
+import Axios from 'axios';
 
 const Grouphome = () => {
-
+    const [groupDetails, setgroupDetails] = useState({groupname:' '});
     let param = useParams();
     console.log(param.id);
+
+    useEffect(async()=>{
+        let {data} = await Axios.get(`http://localhost:5000/group/get-group-details/${param.id}`);
+
+        if(data.result){
+            setgroupDetails(data.result);
+        }
+
+    },[])
     return (
         <Grow in>      
 
@@ -17,7 +27,7 @@ const Grouphome = () => {
             <Grid container justify="space-between" alignItems="stretch" spacing={3} >
 
                 <Grid item xs={12} sm={7} md={12}>
-                    <h1>Group Home Name</h1>
+                    <h1>{groupDetails.groupname}</h1>
                 </Grid>
                 
                 <Grid item xs={12} sm={7} md={3}>         

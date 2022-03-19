@@ -22,20 +22,24 @@ const Profile = () => {
         const handleSubmit = (groupid) =>{            
                   history(`/grouphome/${groupid}`)
                 
-        }
-        
+        }     
   
-
         return (
             <div>
                 <h1>{profile._id}</h1>
+                <h1>{profile.name}</h1>
+                <h1>{profile.email}</h1>
+                <h1>{profile.school}</h1>
+                <h1>{profile.alyear}</h1>
+
                 {
                     groups.map((group)=>{
                         return(
                            
                             <Button onClick={()=>{handleSubmit(group.groupId)}} variant="contained" color="primary" >{group.groupName}</Button>
+                            
                         )
-
+                            
                     })
                 }
                       

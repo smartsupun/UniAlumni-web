@@ -31,3 +31,25 @@ export const groupauth = async (req, res) => {
 
 
 };
+
+
+export const getGroupDetails = async(req,res)=>{
+  try{
+      let groupId = req.params.groupid; 
+      let groupDetails = await GroupModel.find({_id:groupId})
+   
+
+      if(groupDetails){
+         res.send({result:groupDetails[0]})
+      }
+      else{
+        res.send(null)
+
+      }
+  }
+  catch (error){
+      console.log(error)
+  }
+ 
+}
+
