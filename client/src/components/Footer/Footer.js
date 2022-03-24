@@ -7,7 +7,7 @@ const Footer = () => {
             <Box
                 px={{ xs: 3, sm: 10 }}
                 py={{ xs: 3, sm: 10 }}
-                bgcolor="text.secondary"
+                bgcolor="#444442"
                 color="white"
                 marginTop="10px"
             >

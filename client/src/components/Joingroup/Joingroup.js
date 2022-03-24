@@ -1,33 +1,19 @@
 import React from 'react'
-import { Grid,Button , TextField } from '@material-ui/core';
+import { Grid,Button , TextField, Container } from '@material-ui/core';
 import image from '../../images/slide.jpg'
 import Slider from './GroupSuggestCard'
-
-
-
-
-
-
 import Form from './Form'
 
 
-
 const Joingroup = () => {
- 
-    
+     
     return (
-        <div>
+       
+            <Container>
             <Grid container>
                 <Grid item xs={4} sm={4} >
-                        <h1>form</h1>
-
-                        < Form />
-                        
-                
-                      
-                      
-                       
-          
+                        <h1>Fill to see your group</h1>
+                        < Form />                 
                 </Grid>
 
                 <Grid item xs={8} sm={8} style={{backgroundImage:`url(${image})`,backgroundSize:"cover", backgroundPosition: "center",height:'100vh'}}>
@@ -40,7 +26,8 @@ const Joingroup = () => {
                     </Grid>
                 </Grid>
             </Grid>
-        </div>
+            </Container>
+      
     )
 }
 

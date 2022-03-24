@@ -10,11 +10,13 @@ export default makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    
  
   },
   heading: {
-    color: 'rgba(0,183,255, 1)',
+    color: 'rgba(0,133,255, 1)',
     textDecoration: 'none',
+    paddingLeft:'5px'
   },
   tabContainer: {
     padding: '0px 30px ',
@@ -38,7 +40,7 @@ export default makeStyles((theme) => ({
   profile: {
     display: 'flex',
     justifyContent: 'space-between',
-    width: '400px',
+    width: '280px',
   },
   userName: {
     display: 'flex',

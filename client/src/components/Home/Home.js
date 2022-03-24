@@ -7,6 +7,7 @@ import { getPosts } from '../../actions/Posts';
 import Banner from './Banner'
 import Features from './Features'
 import Alumnigroup from './Alumnigroup'
+import Contact from './Contact'
 
 
 const Home = () => {
@@ -18,22 +19,26 @@ const Home = () => {
   }, [currentId, dispatch]);
 
   return (
-    <Grow in>
+    <div>
+             <Banner  />  
+      <Grow in>
+
       <Container >
         <Grid container justify="space-between" alignItems="stretch" spacing={3} >
           <div style={{fontFamily:"Roboto"}}>
-             <Banner  />  
-             <h1 style={{textAlign:"center"}}>Features</h1>
+             <h1 style={{textAlign:"center"}} id="sec">Features</h1>
             <Features />
              <h1 style={{textAlign:"center"}}>Alumni Groups</h1>
             <Alumnigroup />
              <h1 style={{textAlign:"center"}}>Contact Us</h1>
+            <Contact />
            
            
           </div>
         </Grid>
       </Container>
     </Grow>
+      </div>
   );
 };
 

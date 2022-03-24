@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
+import { Avatar, Button, Paper, Grid, Typography, Container ,TextField} from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
@@ -81,6 +81,8 @@ const SignUp = () => {
               <Input name="alyear" label="A/L year" handleChange={handleChange}half  defaultValue={location.state.alyear}></Input>
               <Input name="university" label="university" handleChange={handleChange}  defaultValue={location.state.university}></Input>
               <Input name="graduatedyear" label="Graduated year" handleChange={handleChange} half defaultValue={location.state.graduatedyear}></Input>
+            
+        
             </>
             )}
             <Input name="email" label="Email Address" handleChange={handleChange} type="email" />

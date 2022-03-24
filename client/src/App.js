@@ -16,7 +16,7 @@ import Profile from './components/Profile/Profile';
 const App = () => (
   <BrowserRouter>
        <Navbar />
-    <Container >
+    {/* <Container > */}
        <Routes>
 
         <Route  path="/" exact element={<Home />}/>
@@ -29,7 +29,7 @@ const App = () => (
         <Route path="/Profile"  element={<Profile />} />
           
       </Routes>
-    </Container>
+    {/* </Container> */}
       <Footer />
   </BrowserRouter>
 );

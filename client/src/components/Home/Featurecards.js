@@ -9,7 +9,7 @@ const Featurecards = (props) => {
 
     return (
 
-        <div style={{ width: "200px",marginLeft:"50px" }}>
+        <div style={{ width: "200px",marginLeft:"50px",borderRadius:'10px' }}>
             <Card sx={{ minWidth: 275 }}>
                 <div style={{ textAlign: "center", color:props.color }}><GroupOutlinedIcon /></div>
                 <CardContent>

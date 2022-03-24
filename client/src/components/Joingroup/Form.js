@@ -33,7 +33,9 @@ export default function NativeSelects() {
     const navigate = useNavigate();
     const [state, setState] = React.useState(null);
     const [state2, setState2] = React.useState(null);
-    
+
+    // let id = JSON.parse(localStorage.getItem('profile')).result._id;
+    // console.log(id)
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -229,9 +231,11 @@ export default function NativeSelects() {
 
             <br></br>
 
+                    
+            
+                <Button component={Link} to='/groupauth' variant="contained" color="primary" onClick={handleSubmit}>Next</Button>
+           
 
-
-            <Button component={Link} to='/groupauth' variant="contained" color="primary" onClick={handleSubmit}>Next</Button>
-        </form>
+            </form>
     );
 }
