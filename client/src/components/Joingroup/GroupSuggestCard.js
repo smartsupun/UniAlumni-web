@@ -17,13 +17,13 @@ const GeoupSuggestCard = () => {
         alt="green"
       />
       <CardContent>
-        <Typography gutterBottom variant="h6" component="div">
+        <Typography  variant="h6" component="div">
         Royal College Mother OBA
         </Typography>
        
       </CardContent>
       <CardActions>
-      <Button component={Link} to="/auth" variant="contained" color="primary">Join Group</Button>
+      <Button  variant="contained" color="primary">Join Group</Button>
       </CardActions>
     </Card>
         </div>

@@ -39,8 +39,10 @@ export default makeStyles((theme) => ({
   },
   profile: {
     display: 'flex',
-    justifyContent: 'space-between',
-    width: '280px',
+    justifyContent:'start',
+    width: '180px',
+    marginRight:'30px'
+
   },
   userName: {
     display: 'flex',

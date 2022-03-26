@@ -26,11 +26,11 @@ const Home = () => {
       <Container >
         <Grid container justify="space-between" alignItems="stretch" spacing={3} >
           <div style={{fontFamily:"Roboto"}}>
-             <h1 style={{textAlign:"center"}} id="sec">Features</h1>
+             <h1 style={{textAlign:"center",margin:"40px"}} id="sec">Features</h1>
             <Features />
-             <h1 style={{textAlign:"center"}}>Alumni Groups</h1>
+             <h1 style={{textAlign:"center",margin:"40px"}}>Alumni Groups</h1>
             <Alumnigroup />
-             <h1 style={{textAlign:"center"}}>Contact Us</h1>
+             <h1 style={{textAlign:"center",margin:"40px"}}>Contact Us</h1>
             <Contact />
            
            

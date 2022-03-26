@@ -63,7 +63,7 @@ const SignUp = () => {
   
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container  component="main" maxWidth="sm">
       
       <Paper className={classes.paper} elevation={3}>
         <Avatar className={classes.avatar}>
@@ -81,7 +81,7 @@ const SignUp = () => {
               <Input name="alyear" label="A/L year" handleChange={handleChange}half  defaultValue={location.state.alyear}></Input>
               <Input name="university" label="university" handleChange={handleChange}  defaultValue={location.state.university}></Input>
               <Input name="graduatedyear" label="Graduated year" handleChange={handleChange} half defaultValue={location.state.graduatedyear}></Input>
-            
+             
         
             </>
             )}

@@ -2,8 +2,8 @@ import React from 'react';
 import { Container } from '@material-ui/core';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home/Home';
-import Main from './components/Main/Main';
-import Mainpost from './components/Main/Mainpost';
+// import Main from './components/Main/Main';
+// import Mainpost from './components/Main/Mainpost.txt';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Auth from './components/Auth/Auth';
@@ -20,12 +20,12 @@ const App = () => (
        <Routes>
 
         <Route  path="/" exact element={<Home />}/>
-        <Route  path="/Main"  element={<Main />}/>
-        <Route  path="/Mainpost"  element={<Mainpost />}/>
+        {/* <Route  path="/Main"  element={<Main />}/> */}
+        {/* <Route  path="/Mainpost"  element={<Mainpost />}/> */}
         <Route  path="/groupauth"  element={<Groupauth />}/>
         <Route  path="/grouphome/:id"  element={<Grouphome />}/>
         <Route  path="/joingroup"  element={<Joingroup />}/>
-        <Route path="/auth"  element={<Auth />} />
+        <Route  path="/auth"  element={<Auth />} />
         <Route path="/Profile"  element={<Profile />} />
           
       </Routes>

@@ -1,6 +1,7 @@
 .box{
-    background-color: #444442;
-   
+    background-color: #d4e7ff;
+    /* border: solid black; */
+   margin-top: 20px;
     border-radius: 10px;
     
 
@@ -18,7 +19,7 @@
 
 /* ///// inputs /////*/
 
-input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+.input:focus ~ label, textarea:focus ~ label, .input:valid ~ label, textarea:valid ~ label {
     font-size: 0.75em;
     color: #999;
     top: -5px;
@@ -56,7 +57,7 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
     max-width: 100%;
 }
 
-input,
+.input,
 textarea {
     padding: 30px;
     border: 0;
@@ -67,10 +68,10 @@ textarea {
     border-radius: 4px;
 }
 
-input:focus,
+.input:focus,
 textarea:focus { outline: 0; }
 
-input:focus ~ span,
+.input:focus ~ span,
 textarea:focus ~ span {
     width: 100%;
     -webkit-transition: all 0.075s ease;
@@ -119,12 +120,12 @@ textarea {
     }
 }
 
-input[type=checkbox] + label {
+.input[type=checkbox] + label {
   color: #ccc;
   font-style: italic;
 } 
 
-input[type=checkbox]:checked + label {
+.input[type=checkbox]:checked + label {
   color: #f00;
   font-style: normal;
 }

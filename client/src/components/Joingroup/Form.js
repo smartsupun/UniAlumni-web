@@ -59,7 +59,7 @@ export default function NativeSelects() {
 
 
     return (
-        <form>
+        <FormControl >
 
 
             <FormControl variant="outlined" className={classes.formControl}>
@@ -236,6 +236,6 @@ export default function NativeSelects() {
                 <Button component={Link} to='/groupauth' variant="contained" color="primary" onClick={handleSubmit}>Next</Button>
            
 
-            </form>
+            </FormControl >
     );
 }
