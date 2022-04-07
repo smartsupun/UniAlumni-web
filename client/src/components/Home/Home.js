@@ -34,7 +34,7 @@ const Home = () => {
             <Alumnigroup />
              <h1 style={{textAlign:"center",margin:"40px"}}>Contact Us</h1>
             <Contact />
-            <Test />
+            {/* <Test /> */}
 
            
            

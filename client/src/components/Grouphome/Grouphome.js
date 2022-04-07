@@ -120,7 +120,7 @@ const Grouphome = () => {
                     </Grid>
 
                     <Grid item xs={12} sm={7} md={6}>
-                        <Posts setCurrentId={setCurrentId} />
+                        <Posts groupid={param.id} setCurrentId={setCurrentId} />
                     </Grid>
 
                     <Grid item xs={12} sm={4} md={3}>
