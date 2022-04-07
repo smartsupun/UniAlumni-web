@@ -5,6 +5,7 @@ const postSchema = mongoose.Schema({
     message: String,
     name: String,
     creator: String,
+    groupid:String,
     tags: [String],
     selectedFile: String,
     likes: {

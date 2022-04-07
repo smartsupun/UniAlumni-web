@@ -40,7 +40,7 @@ export default makeStyles((theme) => ({
   profile: {
     display: 'flex',
     justifyContent:'start',
-    width: '180px',
+    width: '250px',
     marginRight:'30px'
 
   },

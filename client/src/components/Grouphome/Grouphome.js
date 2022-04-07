@@ -7,8 +7,6 @@ import Axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { getPosts } from '../../actions/Posts';
 import Posts from '../Posts/posts';
-
-
 import Form from '../Form/Form';
 
 //import react pro sidebar components
@@ -100,12 +98,13 @@ const Grouphome = () => {
 
                                         <MenuItem icon={<FaList />}  >Create Group</MenuItem>
                                         </Button>
-                                        <Button  component={Link} to="/Mainpost">
+                                        <Button >
 
                                         <MenuItem icon={<FaList />}  >Create post</MenuItem>
                                     
                                         </Button>
-                                        <Button  component={Link} to="/Main">
+                                        
+                                        <Button  >
 
                                         <MenuItem icon={<FaList />}  >Create Event</MenuItem>
                                     
@@ -126,7 +125,7 @@ const Grouphome = () => {
 
                     <Grid item xs={12} sm={4} md={3}>
                         {/* <Right currentId={currentId} setCurrentId={setCurrentId} /> */}
-                         <Form currentId={currentId} setCurrentId={setCurrentId} />
+                         <Form currentId={currentId} groupid={param.id} setCurrentId={setCurrentId} />
 
                     </Grid>
 

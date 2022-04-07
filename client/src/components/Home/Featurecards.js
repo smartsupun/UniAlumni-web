@@ -9,12 +9,12 @@ const Featurecards = (props) => {
 
     return (
 
-        <div style={{ width: "200px",marginLeft:"50px",borderRadius:'10px' }}>
+        <div style={{ width: "300px",marginLeft:"50px",borderRadius:'10px',marginBottom:"20px" }}>
             <Card sx={{ minWidth: 275 }}>
-                <div style={{ textAlign: "center", color:props.color }}><GroupOutlinedIcon /></div>
+                <div style={{ textAlign: "center", color:props.color }}><GroupOutlinedIcon style={{ fontSize: 50 }} /></div>
                 <CardContent>
                     <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                        <h4 style={{ textAlign: "center" }} >{props.topic}</h4>
+                        <h4 style={{ textAlign: "center",fontSize:"20px" }} >{props.topic}</h4>
                     </Typography>
                     <Typography sx={{ mb: 1.5 }} color="text.secondary">
                        {props.text}

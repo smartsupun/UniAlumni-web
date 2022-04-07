@@ -8,6 +8,8 @@ import Banner from './Banner'
 import Features from './Features'
 import Alumnigroup from './Alumnigroup'
 import Contact from './Contact'
+import Test from './Test'
+
 
 
 const Home = () => {
@@ -32,6 +34,8 @@ const Home = () => {
             <Alumnigroup />
              <h1 style={{textAlign:"center",margin:"40px"}}>Contact Us</h1>
             <Contact />
+            <Test />
+
            
            
           </div>

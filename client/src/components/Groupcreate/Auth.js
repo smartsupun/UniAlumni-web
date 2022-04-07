@@ -48,7 +48,7 @@ const Group = () => {
           <Grid container spacing={2}>
 
 
-                    <FormControl className={classes.formControl}>
+                    {/* <FormControl className={classes.formControl}>
                         <InputLabel id="demo-simple-select-label">Institute</InputLabel>
                         <Select
                           labelId="demo-simple-select-label"
@@ -60,7 +60,7 @@ const Group = () => {
                             <MenuItem value={20}>A/L School</MenuItem>
                             <MenuItem value={30}>University</MenuItem>
                         </Select>
-                    </FormControl>
+                    </FormControl> */}
 
 
           

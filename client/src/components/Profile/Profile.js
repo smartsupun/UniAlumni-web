@@ -3,6 +3,7 @@ import Axios from 'axios';
 import { Button, Container, Grid, Grow, Box } from '@material-ui/core';
 import { useNavigate, Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
+import Icon from '../../images/Profile-PNG-Clipart.png'
 
 
 const Profile = () => {
@@ -44,26 +45,37 @@ const Profile = () => {
     const classes = useStyles();
     return (
         <Grow in>
-            <Container style={{ backgroundColor: "lightblue", marginTop: "20px", padding: '20px', border: "solid black", borderRadius: "10px" }}>
+            <Container style={{  marginTop: "20px", padding: '20px', border: "solid black", borderRadius: "10px",fontSize:'17px',fontFamily:'Roboto' }}>
 
                 <Grid container >
-                    <Grid item xs={4} sm={4} lg={4} style={{ backgroundColor: "lightgreen", padding: '20px', border: "solid black", borderRadius: "10px" }}>
-                        <h1>prfile pic</h1>
+                    <Grid item xs={4} sm={4} lg={4} style={{ backgroundColor: "lightgreen",alignItems:'center', textAlign:'center' , padding: '20px', border: "solid black", borderRadius: "10px" }}>
+                        <img src={Icon} height='200px'></img>
                         <h1>{profile.name}</h1>
+                        <br /><br /><br />
+                        <Box className={classes.btns}>
+                            <Button  variant="contained" color="primary" >Join for group</Button>
+                            <Button component={Link} to="/groupauth" variant="contained" color="secondary" >Create group</Button> </Box>
                     </Grid>
-                    <Grid item xs={8} sm={8} lg={8} style={{ backgroundColor: "lightpink", padding: '20px', border: "solid black", borderRadius: "10px" }}>
+                    <Grid item xs={8} sm={8} lg={8} style={{  padding: '20px', border: "solid black", borderRadius: "10px" }}>
                         <h3>personal Details</h3><br />
-
-                        <span>User Name: </span><input type="text" value={profile.name} /><br />
-                        <span>Email: </span><input type="text" value={profile.email} /><br /><br />
+                        <table>
+                            
+                        <tr>  <td> <span>User Name: </span></td><td><input style={{  fontSize:'17px',fontFamily:'Roboto'  }} type="text" value={profile.name} /></td></tr>
+                        <tr> <td>   <span>Email: </span></td><td><input  style={{  fontSize:'17px',fontFamily:'Roboto'  }} type="text" value={profile.email} /></td></tr><br/>
+                        
+                        {/* </table> */}
                         <h3>School Details</h3><br />
-                        <span>School: </span><input type="text" value={profile.school} /><br />
-                        <span>A/L Year: </span><input type="text" value={profile.alyear} /><br />
-                        <span>O/L Year: </span><input type="text" value={profile.olyear} /><br /><br />
+                        {/* <table> */}
+                        <tr>  <td><span>School: </span></td><td><input  style={{  fontSize:'17px',fontFamily:'Roboto'  }} type="text" value={profile.school} size="35" /></td></tr>
+                        <tr>  <td>  <span>A/L Year: </span></td><td><input  style={{  fontSize:'17px',fontFamily:'Roboto'  }} type="text" value={profile.alyear} /></td></tr>
+                        <tr>  <td> <span>O/L Year: </span></td><td><input  style={{  fontSize:'17px',fontFamily:'Roboto'  }} type="text" value={profile.olyear} /></td></tr><br/>
+                        {/* </table> */}
                         <h3>University Details</h3><br />
-                        <span>University: </span><input type="text" value={profile.university} /><br />
-                        <span>Graduated Year: </span><input type="text" value={profile.graduatedyear} /><br /><br />
-                        <h3>Joined Groups</h3><br />
+                        {/* <table> */}
+                        <tr>  <td><span>University: </span></td><td><input  style={{  fontSize:'17px',fontFamily:'Roboto'  }} type="text" value={profile.university} size="30"/></td></tr>
+                        <tr>  <td> <span>Graduated Year: </span></td><td><input  style={{  fontSize:'17px',fontFamily:'Roboto'  }} type="text" value={profile.graduatedyear} /></td></tr><br/>
+                        </table>
+                        <h3>Groups</h3><br />
 
 
 
@@ -77,10 +89,7 @@ const Profile = () => {
                             })
                         }
 
-                        <br /><br /><br />
-                        <Box className={classes.btns}>
-                            <Button  variant="contained" color="primary" >Join for group</Button>
-                            <Button component={Link} to="/groupauth" variant="contained" color="secondary" >Create group</Button> </Box>
+                       
                     </Grid>
                 </Grid>
 
