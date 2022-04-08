@@ -37,10 +37,32 @@ export const getGroupDetails = async(req,res)=>{
   try{
       let groupId = req.params.groupid; 
       let groupDetails = await GroupModel.find({_id:groupId})
+      console.log(groupDetails);
+      
+      if(groupDetails){
+         res.send({result:groupDetails[0]})
+      }
+      else{
+        res.send(null)
+
+      }
+  }
+  catch (error){
+      console.log(error)
+  }
+ 
+}
+
+
+export const getallGroupDetails = async(req,res)=>{
+  try{
+      // let groupId = req.params.groupid; 
+      let groupDetails = await GroupModel.find()
    
 
       if(groupDetails){
-         res.send({result:groupDetails[0]})
+        // console.log(groupDetails)
+         res.send({result:groupDetails})
       }
       else{
         res.send(null)

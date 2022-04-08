@@ -8,6 +8,7 @@ import postRoutes from './routes/posts.js';
 import userRouter from "./routes/users.js";
 import GroupRouter from "./routes/groupCreate.js";
 import Group from "./routes/group.js";
+import Allgroups from "./routes/allgroups.js";
 
 const app = express();
 dotenv.config();
@@ -16,12 +17,18 @@ app.use(bodyParser.json({limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
 
-// set default path to posts
+// set default path
 app.use('/posts', postRoutes);
 app.use("/user", userRouter);
 app.use("/groupauth", GroupRouter);
 app.use("/group", Group);
 
+// ----------------------
+
+app.use("/allgroup", Allgroups);
+
+
+// ----------------------
 
 // database connection
 

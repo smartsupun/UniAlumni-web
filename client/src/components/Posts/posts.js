@@ -9,9 +9,7 @@ const Posts = ({ setCurrentId,groupid }) => {
   const posts = useSelector((state) => state.posts);
   const classes = useStyles();
   
-  const numbers = [1, 2, 3, 4];
-const evens = numbers.filter(item => item % 2 === 0);
-console.log(evens);
+  
   return (
     !posts.length ? <CircularProgress /> : (
       <Grid className={classes.container} container alignItems="stretch" spacing={3}>

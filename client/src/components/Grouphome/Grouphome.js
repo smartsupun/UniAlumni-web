@@ -42,6 +42,7 @@ const Grouphome = () => {
 
         if (data.result) {
             setgroupDetails(data.result);
+            console.log(data.result)
         }
 
     }, [])
