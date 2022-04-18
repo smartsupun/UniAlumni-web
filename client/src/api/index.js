@@ -16,6 +16,12 @@ export const likePost = (id) => API.patch(`/posts/${id}/likePost`);
 export const updatePost = (id, updatedPost) => API.patch(`/posts/${id}`, updatedPost);
 export const deletePost = (id) => API.delete(`/posts/${id}`);
 
+export const fetchEvents = () => API.get('/events');
+export const createEvent = (newEvent) => API.post('/events', newEvent);
+export const likeEvent = (id) => API.patch(`/events/${id}/likeEvent`);
+export const updateEvent = (id, updatedEvent) => API.patch(`/events/${id}`, updatedEvent);
+export const deleteEvent = (id) => API.delete(`/events/${id}`);
+
 export const signIn = (formData) => API.post('/user/signin', formData);
 export const signUp = (formData) => API.post('/user/signup', formData);
 

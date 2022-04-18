@@ -9,6 +9,8 @@ import userRouter from "./routes/users.js";
 import GroupRouter from "./routes/groupCreate.js";
 import Group from "./routes/group.js";
 import Allgroups from "./routes/allgroups.js";
+import Event from "./routes/events.js";
+import Request from "./routes/request.js";
 
 const app = express();
 dotenv.config();
@@ -26,6 +28,8 @@ app.use("/group", Group);
 // ----------------------
 
 app.use("/allgroup", Allgroups);
+app.use("/events", Event);
+app.use("/request", Request);
 
 
 // ----------------------

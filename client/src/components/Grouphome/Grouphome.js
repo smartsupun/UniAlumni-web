@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Grow, Grid, Button } from '@material-ui/core';
+import { Container, Grow, Grid, Button,Typography } from '@material-ui/core';
 import { useParams,Link } from 'react-router-dom';
 import Axios from 'axios';
 
 // ff
 import { useDispatch } from 'react-redux';
 import { getPosts } from '../../actions/Posts';
+import { getEvents } from '../../actions/Events';
 import Posts from '../Posts/posts';
+import Events from '../Events/events';
 import Form from '../Form/Form';
+import Request from '../Request/request';
+import Eventform from '../Form/Eventform';
 
 //import react pro sidebar components
 import {
@@ -32,31 +36,58 @@ import {
 // ff
 
 const Grouphome = () => {
+    let [profile, setProfile] = useState({ _id: ' ' });
 
     const [groupDetails, setgroupDetails] = useState({ groupname: ' ' });
-    let param = useParams();
-    console.log(param.id);
-
-    useEffect(async () => {
-        let { data } = await Axios.get(`http://localhost:5000/group/get-group-details/${param.id}`);
-
-        if (data.result) {
-            setgroupDetails(data.result);
-            console.log(data.result)
-        }
-
-    }, [])
-
-    // ff
     const [currentId, setCurrentId] = useState(0);
     const dispatch = useDispatch();
 
-    useEffect(() => {
+    const [request, setRequest] = useState([]);
+    let param = useParams();
+    // console.log(param.id); 
+
+
+
+    useEffect(async () => {
+
         dispatch(getPosts());
+
+        let profileDetails = JSON.parse(localStorage.getItem('profile'));
+        setProfile(profileDetails.result);
+        // console.log(profileDetails.result.name);
+
+        let { data } = await Axios.get(`http://localhost:5000/group/get-group-details/${param.id}`);
+
+
+        if (data.result) {
+            setgroupDetails(data.result);
+            // console.log("user id:",data.result)
+            
+            
+            // console.log(data.result.admin)
+            // console.log(profileDetails.result._id)
+            if(data.result.admin == profileDetails.result._id){
+                let groupid = (data.result._id)
+                let request  = await Axios.post(`http://localhost:5000/request/userrequest`,{groupid});
+                // console.log(request.data.joinRequest);
+                setRequest(request.data.joinRequest);
+            }
+            else{
+                console.log("failed")
+                
+            }
+        }
+        else{
+            console.log("if failed")
+        }
+            
     }, [currentId, dispatch]);
 
+ 
+    
+
     //create initial menuCollapse state using useState hook
-    const [menuCollapse, setMenuCollapse] = useState(false)
+    const [menuCollapse, setMenuCollapse] = useState(false);
 
     //create a custom function that will change menucollapse state from false to true and true to false
   const menuIconClick = () => {
@@ -122,14 +153,19 @@ const Grouphome = () => {
 
                     <Grid item xs={12} sm={7} md={6}>
                         <Posts groupid={param.id} setCurrentId={setCurrentId} />
+                    {/* <Events groupid={param.id} setCurrentId={setCurrentId} /> */}
                     </Grid>
+                  
 
                     <Grid item xs={12} sm={4} md={3}>
-                        {/* <Right currentId={currentId} setCurrentId={setCurrentId} /> */}
-                         <Form currentId={currentId} groupid={param.id} setCurrentId={setCurrentId} />
+                                        {/* <Typography variant="h6" component="div">{groupDetails.admin}</Typography> */}
+                       
+                         <Request requestDetails={request}/>
+                         <Form currentId={currentId} groupid={param.id} setCurrentId={setCurrentId} /><br/><br/><br/><br/>
+                         {/* <Eventform currentId={currentId} groupid={param.id} setCurrentId={setCurrentId} /> */}
 
                     </Grid>
-
+                  
                 </Grid>
             </Container>
 
