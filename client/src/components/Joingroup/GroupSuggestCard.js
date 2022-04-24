@@ -125,12 +125,7 @@ const GeoupSuggestCard = () => {
 
   return (
     <div>
-      {/* <TextField id="outlined-basic" label="Search"  onChange={handleTextSearch} variant="filled" /> */}
-
-
-
-
-
+      
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -166,26 +161,6 @@ const GeoupSuggestCard = () => {
 
 
 
-
-
-
-
-
-        {/* <input
-          style={{
-            float: "left",
-            padding: "6px",
-            border: "none",
-            marginTop: "8px",
-            marginRight: "16px",
-            fontSize: "17px"
-          }}
-          className="form-control"
-          type="search"
-          placeholder="Search"
-          name="searchTerm"
-          onChange={handleTextSearch}
-        ></input> */}
       
 
       <div style={{ width: "200px", marginLeft: "50px" }}>
