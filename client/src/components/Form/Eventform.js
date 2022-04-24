@@ -3,6 +3,7 @@ import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import FileBase from 'react-file-base64';
 
+
 import { createEvent, updateEvent } from '../../actions/Events';
 import useStyles from './style';
 
@@ -13,7 +14,7 @@ import 'reactjs-popup/dist/index.css';
 
 const Eventform = ({ currentId, setCurrentId ,groupid}) => {
   const [eventData, setEventData] = useState({ title: '', message: '', tags: '', selectedFile: '',groupid:groupid });
-  const event = useSelector((state) => (currentId ? state.Events.find((message) => message._id === currentId) : null));
+  const event = useSelector((state1) => (currentId ? state1.events.find((message) => message._id === currentId) : null));
   const dispatch = useDispatch();
   const classes = useStyles();
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -30,6 +31,8 @@ const Eventform = ({ currentId, setCurrentId ,groupid}) => {
   };
   
   const handleSubmit = async (e) => {
+
+    
     e.preventDefault();
     
     if (currentId === 0) {

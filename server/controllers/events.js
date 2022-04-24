@@ -1,10 +1,11 @@
 import mongoose from 'mongoose';
-import EventMessage from '../models/eventMessage.js';
+import EventMessage from '../models/eventmessage.js';
 
 
 export const getEvents = async (req, res) => { 
     try {
-        const eventMessages = await EventMessage.find();
+        const eventMessages = await EventMessage.find({});
+        // console.log("eventMessages")
         console.log(eventMessages)
                 
         res.status(200).json(eventMessages);

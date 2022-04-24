@@ -5,9 +5,10 @@ import { useSelector } from 'react-redux';
 import Event from './Event/event';
 import useStyles from './style';
 
-const Events = ({ setCurrentId, groupid }) => {
-  const events = useSelector((state) => state.events);
+const Events = ({ setCurrentId, groupid,events }) => {
+  // const events = useSelector((state) => state.events);
   const classes = useStyles();
+  // console.log(events)
 
 
   console.log((events));

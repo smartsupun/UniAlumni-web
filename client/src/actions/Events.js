@@ -6,7 +6,7 @@ import * as api from '../api';
 export const getEvents = () => async (dispatch) => {
     try {
       const { data } = await api.fetchEvents();
-      // console.log(data)
+      console.log(data)
   
       dispatch({ type: FETCH_ALL, payload: data });
     } catch (error) {
@@ -26,9 +26,9 @@ export const getEvents = () => async (dispatch) => {
   
   export const updateEvent = (id, event) => async (dispatch) => {
     try {
-      const { data } = await api.updateEvent(id, event);
+      const  edata  = await api.updateEvent(id, event);
   
-      dispatch({ type: UPDATE, payload: data });
+      dispatch({ type: UPDATE, payload: edata.data });
     } catch (error) {
       console.log(error.message);
     }

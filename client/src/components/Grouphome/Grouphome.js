@@ -43,14 +43,26 @@ const Grouphome = () => {
     const dispatch = useDispatch();
 
     const [request, setRequest] = useState([]);
+    const [events, setevents] = useState([]);
     let param = useParams();
-    // console.log(param.id); 
+    console.log("current id 01:",currentId); 
+    
+    // useEffect(async()=>{
+        //     dispatch(getEvents());
+        
+        // })
+        
+        useEffect(async () => {
+            
+            dispatch(getPosts());
+            // dispatch(getEvents());
+            
+        let  event  = await Axios.get("http://localhost:5000/events");
+        // console.log("events:",event.data)
+        setevents(event.data)
 
+          
 
-
-    useEffect(async () => {
-
-        dispatch(getPosts());
 
         let profileDetails = JSON.parse(localStorage.getItem('profile'));
         setProfile(profileDetails.result);
@@ -153,8 +165,9 @@ const Grouphome = () => {
 
                     <Grid item xs={12} sm={7} md={6}>
                         <Posts groupid={param.id} setCurrentId={setCurrentId} />
-                    {/* <Events groupid={param.id} setCurrentId={setCurrentId} /> */}
+                    <Events groupid={param.id} setCurrentId={setCurrentId} events={events}/>
                     </Grid>
+                    
                   
 
                     <Grid item xs={12} sm={4} md={3}>
@@ -162,7 +175,7 @@ const Grouphome = () => {
                        
                          <Request requestDetails={request}/>
                          <Form currentId={currentId} groupid={param.id} setCurrentId={setCurrentId} /><br/><br/><br/><br/>
-                         {/* <Eventform currentId={currentId} groupid={param.id} setCurrentId={setCurrentId} /> */}
+                         <Eventform currentId={currentId} groupid={param.id} setCurrentId={setCurrentId} />
 
                     </Grid>
                   

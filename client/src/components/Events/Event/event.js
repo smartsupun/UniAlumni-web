@@ -1,10 +1,8 @@
 import React from 'react';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core/';
-import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
-import DeleteIcon from '@material-ui/icons/Delete';
+import StarIcon from '@material-ui/icons/Star';import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import ThumbUpAltOutlined from '@material-ui/icons/ThumbUpAltOutlined';
-import { useDispatch } from 'react-redux';
+import StarOutlineIcon from '@material-ui/icons/StarOutline';import { useDispatch } from 'react-redux';
 import moment from 'moment';
 
 import { likeEvent, deleteEvent } from '../../../actions/Events';
@@ -20,13 +18,13 @@ const Event = ({ event, setCurrentId }) => {
     if (event.likes.length > 0) {
       return event.likes.find((like) => like === (user?.result?.googleId || user?.result?._id))
         ? (
-          <><ThumbUpAltIcon fontSize="small" />&nbsp;{event.likes.length > 2 ? `You and ${event.likes.length - 1} others` : `${event.likes.length} like${event.likes.length > 1 ? 's' : ''}` }</>
+          <><StarIcon fontSize="small" />&nbsp;{event.likes.length > 2 ? `You and ${event.likes.length - 1} others` : `${event.likes.length} Interested${event.likes.length > 1 ? 's' : ''}` }</>
         ) : (
-          <><ThumbUpAltOutlined fontSize="small" />&nbsp;{event.likes.length} {event.likes.length === 1 ? 'Like' : 'Likes'}</>
+          <><StarOutlineIcon fontSize="small" />&nbsp;{event.likes.length} {event.likes.length === 1 ? 'Interest' : 'Interested'}</>
         );
     }
 
-    return <><ThumbUpAltOutlined fontSize="small" />&nbsp;Like</>;
+    return <><StarOutlineIcon fontSize="small" />&nbsp;Like</>;
   };
 
   return (

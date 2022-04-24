@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const EventSchema = mongoose.Schema({
+const eventSchema = mongoose.Schema({
     title: String,
     message: String,
     name: String,
@@ -18,6 +18,6 @@ const EventSchema = mongoose.Schema({
     },
 })
 
-var EventMessage = mongoose.model('EventMessage', EventSchema);
+var EventMessage = mongoose.model('EventMessage', eventSchema);
 
 export default EventMessage;
