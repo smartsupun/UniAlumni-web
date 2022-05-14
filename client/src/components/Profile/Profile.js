@@ -53,7 +53,7 @@ const Profile = () => {
                         <h1>{profile.name}</h1>
                         <br /><br /><br />
                         <Box className={classes.btns}>
-                            <Button  variant="contained" color="primary" >Join for group</Button>
+                            <Button component={Link} to="/joingroup" variant="contained" color="primary" >Join for group</Button>
                             <Button component={Link} to="/groupauth" variant="contained" color="secondary" >Create group</Button> </Box>
                     </Grid>
                     <Grid item xs={8} sm={8} lg={8} style={{  padding: '20px', border: "solid black", borderRadius: "10px" }}>

@@ -87,20 +87,22 @@ const GeoupSuggestCard = () => {
   }, [])
 
 
-  
-
   const hadlesubmit = async (groupid) => {
-    let user = JSON.parse(localStorage.getItem('profile'));
+    alert("Your request sent to group admin")
 
+    
+
+    let user = JSON.parse(localStorage.getItem('profile'));
+    
     let userid = user.result._id;
     let username = user.result.name;
     let useruni = user.result.university;
-
+    
     console.log(userid, groupid)
     let { data } = await Axios.post(`http://localhost:5000/user/joinrequest`, {
       userid, groupid, username, useruni
     });
-
+    
 
 
   }
@@ -182,7 +184,7 @@ const GeoupSuggestCard = () => {
                   </CardContent>
                   <CardActions>
                     {/* <Button component={Link} to = {`/grouphome/${group._id}`} variant="contained" color="primary">Join Group</Button> */}
-                    <Button onClick={() => { hadlesubmit(group._id) }} variant="contained" color="primary">Join Group</Button>
+                    <Button onClick={(e) => { hadlesubmit(group._id) }} variant="contained" color="primary">Join Group</Button>
                   </CardActions>
                 </Card>
 
